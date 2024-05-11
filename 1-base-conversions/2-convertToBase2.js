@@ -3,7 +3,13 @@
 /******************************************************************************/
 
 const convertToBase2 = (element) => {
-  return `0b${element.toString(2)}`;
+  if (typeof element == "number"){
+    return `0b${element.toString(2)}`;
+  }
+  if (typeof element == "string" && element[1] == "x"){
+    let ten = parseInt(element.substring(2), 16);
+    return `0b${ten.toString(2)}`
+  }
 };
 
 /******************************************************************************/

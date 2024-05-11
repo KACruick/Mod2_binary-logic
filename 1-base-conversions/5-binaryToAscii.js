@@ -3,7 +3,7 @@
 
 /******************************************************************************/
 
-// Helper function to convert a binary string into an array of 8-bit strings
+// Helper function to convert a binary string into an array of 8-bit strings  //base 2 to 8-bit
 const binaryStringToArray = str => {
   let binary8bitStr = '';
   let count = 0;
@@ -21,8 +21,9 @@ const binaryStringToArray = str => {
   return binary8bitStr.split(',');
 };
 
-const binaryToAscii = str => {
-  // Your code here 
+const binaryToAscii = str => {    //base 2 to ascii
+  let binArray = binaryStringToArray(str);
+  return binArray.map((num) => String.fromCharCode(parseInt(num,2))).join("")
 };
 
 /******************************************************************************/
